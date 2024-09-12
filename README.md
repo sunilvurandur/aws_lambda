@@ -104,3 +104,7 @@ Testing the application using `curl` commands. Below are the commands for each C
     -d '{ "student_id": "student_007" }'
 ```
   <img width="588" alt="Screenshot 2024-09-11 at 6 28 24 PM" src="https://github.com/user-attachments/assets/b56c0f4c-46b2-4d02-923e-dabcaeced63d">
+
+
+## Reflection
+
