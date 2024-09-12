@@ -52,11 +52,11 @@ Schema
    - **PUT /students:** For updating a student record by `student_id`.
    - **DELETE /students:** For deleting a student record by `student_id`.
      
-    <img width="1469" alt="Screenshot 2024-09-11 at 7 01 40 PM" src="https://github.com/user-attachments/assets/009f240b-da69-4c5a-8626-908f3daf4872">
+  <img width="1469" alt="Screenshot 2024-09-11 at 7 01 40 PM" src="https://github.com/user-attachments/assets/009f240b-da69-4c5a-8626-908f3daf4872">
      
 #### 3.3 Making sure Integration Type is `Lambda Function`
    
-    <img width="1470" alt="Screenshot 2024-09-11 at 7 10 16 PM" src="https://github.com/user-attachments/assets/deaf9042-4d81-4780-b7cf-ba3b78c38435">
+  <img width="1470" alt="Screenshot 2024-09-11 at 7 10 16 PM" src="https://github.com/user-attachments/assets/deaf9042-4d81-4780-b7cf-ba3b78c38435">
 
 #### 3.4 Deploying the API in dev ENV
   - **INVOKE URL** - [https://n9rtotemdl.execute-api.us-east-2.amazonaws.com/dev]
