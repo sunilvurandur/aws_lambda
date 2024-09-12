@@ -52,11 +52,11 @@ Schema
    - **PUT /students:** For updating a student record by `student_id`.
    - **DELETE /students:** For deleting a student record by `student_id`.
      
-    <img width="1469" alt="Screenshot 2024-09-11 at 7 01 40 PM" src="https://github.com/user-attachments/assets/e27fd47c-2362-4443-995e-f06e3994d13a">
+    <img width="1469" alt="Screenshot 2024-09-11 at 7 01 40 PM" src="https://github.com/user-attachments/assets/009f240b-da69-4c5a-8626-908f3daf4872">
      
 #### 3.3 Making sure Integration Type is `Lambda Function`
    
-    <img width="1470" alt="Screenshot 2024-09-11 at 7 10 16 PM" src="https://github.com/user-attachments/assets/bb857821-6bb7-400c-be0a-11f6ef9a6f9b">
+    <img width="1470" alt="Screenshot 2024-09-11 at 7 10 16 PM" src="https://github.com/user-attachments/assets/deaf9042-4d81-4780-b7cf-ba3b78c38435">
 
 #### 3.4 Deploying the API in dev ENV
   - **INVOKE URL** - [https://n9rtotemdl.execute-api.us-east-2.amazonaws.com/dev]
@@ -108,3 +108,50 @@ Testing the application using `curl` commands. Below are the commands for each C
 
 ## Reflection
 
+### Learnings
+
+1. **AWS Lambda & DynamoDB Integration:**
+   - This project provided me hands-on experience in integrating AWS Lambda with DynamoDB for CRUD operations. The serverless approach eliminated the need for managing infrastructure, making development more pretty straightforward.
+
+2. **API Gateway & Lambda Proxy Integration:**
+   - A major learning experience was configuring API Gateway to work seamlessly with AWS Lambda. Initially, I encountered a `502 Bad Gateway` error due to not enabling **Lambda Proxy Integration**. After enabling this option, the connection between API Gateway and Lambda function was established correctly, allowing the application to work as expected.
+
+3. **DynamoDB Usage:**
+   - DynamoDB is a NoSQL database that scales automatically and handles high-throughput workloads. I learned that it is ideal for applications requiring low-latency responses and simple queries, like the student record management system I built.
+
+4. **Serverless Architecture with AWS Lambda:**
+   - The key usage of using AWS Lambda is that it allows you to focus purely on code without worrying about managing servers. This drastically reduces operations, making it a cost-effective and scalable solution for certain types of applications.
+
+---
+
+### When to Use AWS Lambda
+
+- AWS Lambda can be used in cases where functions are triggered to particular events, such as API Gateway requests, file uploads to s3, or database changes. for Eg, it is perfect for web applications where user actions trigger database updates or email notifications.
+- It is also best for short-lived tasks that can be executed in a few seconds to a couple of minutes. As per my research, the Serverless approach is well-suited for microservices architecture or individual operations, such as CRUD ops in this project.
+- One of its best things is, it automatically scales based on the number of requests. It is the perfect solution for applications with variable traffic. I.e, we can pay only for the time our function runs, which is more cost-efficient.
+  
+---
+
+### When **Not** to Use AWS Lambda
+
+- AWS Lambda is not a better choice for applications that require state to be maintained across multiple requests or that run for longer periods. Since lambda has a maximum timeout for 15 min, long-running processes can't run seamlessly. For eg, video rendering or data-heavy computation are not suited to this service.
+  
+---
+
+### When to Use DynamoDB
+
+- DynamoDB is suited for applications that require high scalability with flexible schemas. for eg, user profiles, session management or log data storage. It is efficient in performing for applications where we need low-latency access to key-value or document-based data.
+- Also it integrates with AWS Lambda and other serverless services. DynamoDB is also used in cases when the application is with high read/write throughput and requires low-latency access to the data.
+  
+---
+
+
+### Challenges & Solutions
+
+1. **502 Bad Gateway Error:**
+   - One of the major challenges was encountering a `502 Bad Gateway` error when trying to connect API Gateway with Lambda. This was resolved by enabling **Lambda Proxy Integration**, which allowed API Gateway to correctly pass requests to the Lambda function.
+
+2. **Error Handling & Response Formatting:**
+   - Another challenge was ensuring proper error handling and formatting the Lambda responses for API Gateway. Once I understood how to manage API Gateway responses and Lambda errors, the system became much more robust and reliable.
+
+---
